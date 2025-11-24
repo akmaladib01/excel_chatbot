@@ -1,63 +1,53 @@
-Excel Chatbot
-Overview
+🐍 Excel/CSV Search Chatbot
 
-This Python script allows you to search through multiple Excel (.xlsx, .xls) and CSV files in a folder.
+Hey there! 👋 This little Python chatbot helps you search through all your Excel and CSV files super easily. Just type what you’re looking for, and it will find the matching rows and show them nicely in your browser.
 
-Searches are case-insensitive.
+No more scrolling endlessly in Excel!
 
-Only rows containing the search keyword are returned.
+✨ What It Can Do
 
-Matching rows are saved as HTML files and opened automatically in your default browser.
+Search multiple Excel sheets and CSV files at once
 
-Original files remain unchanged.
+Case-insensitive search (so CRITICAL = critical)
 
-Requirements
+Shows only the rows containing your keyword
 
-Python 3.7+ installed on your system
+Saves results as HTML for clean viewing in your browser
 
-Python libraries: pandas
+Leaves your original files completely untouched
 
-Install required library
+🛠 Requirements
+
+Python 3.7 or higher
+
+Python library: pandas
+
+Install pandas if you haven’t yet:
+
 pip install pandas
 
-Folder Setup
+📂 How to Set Up Your Files
 
-Create a folder to store all your Excel/CSV files (example: Excel_Files).
+Make a folder for all your Excel/CSV files. Example: Excel_Files
 
-Place all your .xlsx, .xls, and .csv files in that folder.
+Put all your .xlsx, .xls, and .csv files there
 
-Each Excel file can have multiple sheets.
+Excel files can have multiple sheets
 
-CSV files are treated as a single sheet.
+CSV files are treated as single sheets
 
-Update the folder path in the script if needed:
+In the script, update the folder path if needed:
 
-folder_path = "Excel_Files"  # change to your folder path
+folder_path = "Excel_Files"
 
-How the Script Works
-
-Scans the folder for all Excel and CSV files.
-
-Reads each file and automatically detects the header row.
-
-Cleans the data by removing empty rows and columns.
-
-Loads all sheets/files into memory for fast searching.
-
-Starts a chat loop in the terminal where you can type your search query.
-
-Searches all sheets/files for rows containing your keyword (case-insensitive).
-
-Saves matching rows into HTML files inside a folder called search_results and opens them in your browser.
-
-How to Use
+🚀 How to Use It
 
 Run the script:
 
 python chatbot_excel_search.py
 
 
-The script will display all detected files:
+The script will show all your files:
 
 Found 3 file(s) in 'Excel_Files':
 1) file1.xlsx
@@ -65,42 +55,40 @@ Found 3 file(s) in 'Excel_Files':
 3) file3.csv
 
 
-Type your search keyword:
+Type your search keyword when prompted:
 
 You: critical
 
 
-If matches are found, you’ll see something like:
+If matches are found, you’ll see:
 
 📄 Matches found in File: file1.xlsx | Sheet: Sheet1 (3 row(s))
 
 
-The matching rows will open automatically in your default browser as an HTML table.
+The matching rows automatically open in your browser as a clean HTML table.
 
-Type exit to stop the chatbot:
+Type exit to quit:
 
 You: exit
 Goodbye!
 
-Output
+💾 Where Results Go
 
-HTML files are saved in the folder search_results.
+All HTML results are saved in the folder search_results
 
-File names format:
+Filenames follow this format:
 
 <OriginalFileName>_<SheetName>_results.html
 
 
 Example: file1_Sheet1_results.html
 
-Notes / Tips
+💡 Tips
 
-Only rows containing the keyword are included in the results.
+Only rows containing your search keyword are shown
 
-The search is case-insensitive.
+Works with multiple sheets in Excel
 
-Original Excel/CSV files are never modified.
+Search multiple times — each query opens a new HTML result
 
-Works with multiple sheets in Excel.
-
-You can search multiple keywords in separate prompts.
+Original files never get changed
